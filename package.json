@@ -1,0 +1,21 @@
+{
+  "license": {
+    "type": "MIT"
+  },
+  "name": "doodle",
+  "private": true,
+  "scripts": {
+    "start": "http-server . -p 8888",
+    "test": "echo Open http://127.0.0.1:8888/SpecRunner.html' to see tests.",
+    "postinstall": "bower install --config.interactive=false",
+    "jscs": "jscs js"
+  },
+  "version": "0.1.0",
+  "dependencies": {
+    "bower": "^1.7.2",
+    "http-server": "^0.8.5"
+  },
+  "devDependencies": {
+    "jscs": "^2.8.0"
+  }
+}
