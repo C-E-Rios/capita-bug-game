@@ -13,8 +13,8 @@
     </div>
 </div>
 
-<div ng-if="$ctrl.doodleA.selected" class="doodleA">
-    <span class="icon-{{$ctrl.doodleA.name}}-bug"></span>
+<div ng-if="$ctrl.doodleA.selected || $ctrl.doodleB.selected" class="doodleA">
+    <span ng-if="$ctrl.doodleA.selected" class="icon-{{$ctrl.doodleA.name}}-bug"></span>
     <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'speed'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'strength'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'intelligence'"></doodle-attributes>
@@ -27,8 +27,8 @@
     <span>intelligence</span>
 </div>
 
-<div ng-if="$ctrl.doodleB.selected" class="doodleB">
-    <span class="icon-{{$ctrl.doodleB.name}}-bug"></span>
+<div ng-if="$ctrl.doodleA.selected || $ctrl.doodleB.selected" class="doodleB">
+    <span ng-if="$ctrl.doodleB.selected" class="icon-{{$ctrl.doodleB.name}}-bug"></span>
     <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'speed'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'strength'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'intelligence'"></doodle-attributes>

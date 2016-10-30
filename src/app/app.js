@@ -1,4 +1,5 @@
 import angular from 'angular';
+import _ from 'lodash';
 import Components from './components/components';
 
 import AppService from './app.service';

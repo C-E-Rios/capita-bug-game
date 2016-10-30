@@ -2,6 +2,9 @@
     width: 100%;
     min-height: 230px;
     position: relative;
+    font-family: 'LatoBold', Lato, arial, sans-serif;
+    line-height: 40px;
+    padding-bottom: 10px;
 }
 
 #comparison-area {
@@ -33,7 +36,12 @@
     }
 }
 
-.select-copy {
+.attributes {
     margin: 0 auto;
-    width: 50%;
+    width: 40%;
+
+    .select-copy {
+        padding: 1em;
+        width: 80%;
+    }
 }

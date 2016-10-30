@@ -1,1 +1,7 @@
-<span class="green" ng-class="{'red': $ctrl.opponent.selected && $ctrl.doodle.attributes[$ctrl.attribute] < $ctrl.opponent.attributes[$ctrl.attribute]}">{{$ctrl.doodle.attributes[$ctrl.attribute]}}</span>
+<div ng-if="$ctrl.doodle.selected">
+    <span class="green" ng-class="{'red': $ctrl.opponent.selected && $ctrl.doodle.attributes[$ctrl.attribute] < $ctrl.opponent.attributes[$ctrl.attribute]}">{{$ctrl.doodle.attributes[$ctrl.attribute]}}</span>
+</div>
+
+<div ng-if="!$ctrl.doodle.selected" class="grey">
+    <span>0</span>
+</div>
