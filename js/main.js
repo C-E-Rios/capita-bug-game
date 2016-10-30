@@ -44,16 +44,18 @@
         $('a', '.sortable').on('click', function (evt) {
             evt.preventDefault();
 
+            var type = ($(this).parent().hasClass('bugname')) ? 'doodleName' : 'teamName';
+
             if ($(this).hasClass('sort-up')) {
                 $(this).removeClass('sort-up');
                 $(this).addClass('sort-down');
-                sortBugsByName('down');
+                sortBugsByName('down', type);
             } else {
                 if ($(this).hasClass('sort-up')) {
                     $(this).removeClass('sort-down');
                 }
                 $(this).addClass('sort-up');
-                sortBugsByName('up');
+                sortBugsByName('up', type);
             }
         });
 
@@ -86,16 +88,16 @@
 
     }
 
-    function sortBugsByName(direction) {
+    function sortBugsByName(direction, type) {
         if (direction === "down") {
             bugArr = bugArr.sort(function (a, b) {
-                return a.doodleName.localeCompare(b.doodleName);
+                return a[type].localeCompare(b[type]);
             });
         }
 
         if (direction === 'up') {
             bugArr = bugArr.sort(function (a, b) {
-                return a.doodleName.localeCompare(b.doodleName);
+                return a[type].localeCompare(b[type]);
             });
             bugArr.reverse();
         }
