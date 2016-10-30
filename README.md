@@ -1,3 +1,10 @@
+# Notes
+I've run out of time so the following are still outstanding:
+  - Finish styling comparison section
+  - Fix flicker of content on load. Ng-cloak not working on chrome?
+  - Adjust webpack settings to reduce size of bundle and reduce load time (4mb? Sourcemaps!!)
+  - Write tests
+
 # Welcome to your task
 
 We are going to set you some tasks that will really help us when it comes to assessing if you're fit for the role available. This is a totally fictional project made just for this purpose - nothing you do will be used for anything other than as a talking point and assessment of your abilities. It focuses on HTML, JavaScript and CSS. If you want to add AngularJS to anything, you are welcome to and this is fine, but our key aim is to understand your underlying skills. Use any task runners, css pre-processors and npm, bower packages as you see fit.
