@@ -1,10 +1,14 @@
 import angular from 'angular';
+import Components from './components/components';
+
+import AppService from './app.service';
 import AppComponent from './app.component.js';
+
 import './app.scss';
 
-import mainJs from './js/main';
-
-angular.module('doodleBugApp', [])
+angular.module('doodleBugApp', [
+        Components
+    ])
 
     .config(($locationProvider) => {
         'ngInject';
@@ -12,4 +16,5 @@ angular.module('doodleBugApp', [])
         // #how-to-configure-your-server-to-work-with-html5mode
         $locationProvider.html5Mode(true).hashPrefix('!');
     })
+    .service('AppService', AppService)
     .component('app', AppComponent);

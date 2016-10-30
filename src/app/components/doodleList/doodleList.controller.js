@@ -1,0 +1,23 @@
+class DoodleListContoller {
+
+    constructor () {
+        this.doodlesSelected = 0;
+        this.limit = 2;
+    }
+
+    sortDoodles (prop) {
+        this.reverse = (this.orderBy === prop) ? !this.reverse : false;
+        this.orderBy = prop;
+
+        // Needed for classes on sort toggles
+        this.reverse ? this['sort' + prop] = 'down' : this['sort' + prop] = 'up';
+        prop === 'name' ? this.sortteam = null : this.sortname = null;
+    }
+
+    newDoodle (selectedDoodle) {
+        selectedDoodle.selected ? this.doodlesSelected++ : this.doodlesSelected--;
+    }
+
+}
+
+export default DoodleListContoller;

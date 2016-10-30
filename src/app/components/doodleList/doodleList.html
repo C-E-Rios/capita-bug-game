@@ -1,0 +1,26 @@
+<table name="doodle-list" id="doodle-list" description="All available players for the game">
+    <thead>
+        <tr>
+            <th class="sortable">Doodle
+                <span ng-click="$ctrl.sortDoodles('name')" ng-class="{'sort-up': $ctrl.sortname === 'up' && !$ctrl.sortteam, 'sort-down': $ctrl.sortname === 'down' && !$ctrl.sortteam}">
+                    sort
+                </span>
+            </th>
+            <th class="sortable">Team
+                <span ng-click="$ctrl.sortDoodles('team')" ng-class="{'sort-up': $ctrl.sortteam === 'up' && !$ctrl.sortname, 'sort-down': $ctrl.sortteam === 'down' && !$ctrl.sortname}">
+                    sort
+                </span>
+            </th>
+            <th>Best rating</th>
+            <th>Compare</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="doodle in $ctrl.doodles | orderBy: $ctrl.orderBy:$ctrl.reverse track by $index">
+            <td class="icon-{{doodle.name}}-bug">{{doodle.name}}:bug</td>
+            <td>{{doodle.team}}</td>
+            <td>{{doodle.highestRating}}</td>
+            <td><input name="compare-{{doodle.name}}" type="checkbox" ng-model="doodle.selected" ng-change="$ctrl.newDoodle(doodle)" ng-disabled="!doodle.selected && $ctrl.doodlesSelected === $ctrl.limit"></td>
+        </tr>
+    </tbody>
+</table>
