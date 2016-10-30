@@ -5,6 +5,11 @@ class DoodleListContoller {
         this.limit = 2;
     }
 
+    $onInit () {
+        console.log(this);
+        console.log('hello');
+    }
+
     sortDoodles (prop) {
         this.reverse = (this.orderBy === prop) ? !this.reverse : false;
         this.orderBy = prop;
@@ -15,7 +20,7 @@ class DoodleListContoller {
     }
 
     manageDoodles (selectedDoodle) {
-        // newDoodle event 
+        // newDoodle event
         this.newDoodle({$event: {newDoodle: selectedDoodle}})
         selectedDoodle.selected ? this.doodlesSelected++ : this.doodlesSelected--;
     }

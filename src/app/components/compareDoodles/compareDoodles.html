@@ -1,19 +1,33 @@
-<style media="screen">
-    .green {
-        color: green;
-    }
-    .red {
-        color: red;
-    }
-</style>
-<div ng-if="$ctrl.doodleA.selected" style="text-align: center;">
+<div ng-if="!$ctrl.doodleA.selected && !$ctrl.doodleB.selected">
+    <div class="doodleA">
+        <span>?</span>
+    </div>
+
+    <div class="attributes">
+        <span>Vs</span>
+        <span class="select-copy">Select two doodles to compare which has the skills you like most.</span>
+    </div>
+
+    <div class="doodleB">
+        <span>?</span>
+    </div>
+</div>
+
+<div ng-if="$ctrl.doodleA.selected" class="doodleA">
     <span class="icon-{{$ctrl.doodleA.name}}-bug"></span>
     <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'speed'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'strength'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'intelligence'"></doodle-attributes>
 </div>
 
-<div ng-if="$ctrl.doodleB.selected" style="text-align: center;">
+<div class="attributes" ng-if="$ctrl.doodleA.selected || $ctrl.doodleB.selected">
+    <span>Vs</span>
+    <span>speed</span>
+    <span>strength</span>
+    <span>intelligence</span>
+</div>
+
+<div ng-if="$ctrl.doodleB.selected" class="doodleB">
     <span class="icon-{{$ctrl.doodleB.name}}-bug"></span>
     <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'speed'"></doodle-attributes>
     <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'strength'"></doodle-attributes>

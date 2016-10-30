@@ -6,6 +6,8 @@
 
 #comparison-area {
     margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 #comparisonBase {
@@ -14,4 +16,24 @@
     height: 110px;
     background-size: 100%;
     margin: 0 auto;
+}
+
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+.doodleA, .doodleB, .attributes {
+    text-align: center;
+    display: inline-block;
+    span {
+        display: block;
+    }
+}
+
+.select-copy {
+    margin: 0 auto;
+    width: 50%;
 }

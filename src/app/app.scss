@@ -21,6 +21,15 @@
     font-style: normal;
 }
 
+.ng-cloak,
+.x-ng-cloak,
+[data-ng-cloak],
+[ng-cloak],
+[ng\:cloak],
+[x-ng-cloak] {
+    display: none !important;
+}
+
 body {
     background: #ECF0F1;
 }

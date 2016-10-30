@@ -1,12 +1,12 @@
 <!-- Add your site or application content here -->
-<header>
+<header class="ng-cloak">
     <h1>doodle<span>:bug</span></h1>
 </header>
-<section id="bug-list" class="core-section">
+<section id="bug-list" class="core-section ng-cloak">
     <h2>the doodles</h2>
     <doodle-list doodles="$ctrl.doodles" new-doodle="$ctrl.newDoodle = $event.newDoodle"></doodle-list>
 </section>
-<section id="compare-bugs" class="core-section">
+<section id="compare-bugs" class="core-section ng-cloak">
     <h2>comparison</h2>
     <div id="comparison-area">
         <compare-doodles new-doodle="$ctrl.newDoodle"></compare-doodles>
