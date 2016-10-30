@@ -5,17 +5,48 @@
   "name": "doodle",
   "private": true,
   "scripts": {
-    "start": "http-server . -p 8888",
+    "start": "webpack-dev-server --inline --port 3000",
+    "clean": "npm cache clean && rimraf -- node_modules doc typings coverage dist",
+    "build": "export NODE_ENV=dev && webpack",
+    "build:production": "export NODE_ENV=prod && webpack -p",
     "test": "echo Open http://127.0.0.1:8888/SpecRunner.html' to see tests.",
-    "postinstall": "bower install --config.interactive=false",
     "jscs": "jscs js"
   },
   "version": "0.1.0",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "dependencies": {
-    "bower": "^1.7.2",
-    "http-server": "^0.8.5"
+    "http-server": "^0.8.5",
+    "angular": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "lodash": "4.6.1"
   },
   "devDependencies": {
-    "jscs": "^2.8.0"
+    "babel-core": "6.3.26",
+    "babel-loader": "6.1.0",
+    "babel-polyfill": "6.3.14",
+    "babel-preset-es2015": "6.1.18",
+    "css-loader": "~0.21.0",
+    "eslint": "1.7.3",
+    "eslint-config-angular": "0.4.0",
+    "eslint-plugin-angular": "0.12.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "~1.7.0",
+    "jquery": "^3.1.1",
+    "jscs": "^2.8.0",
+    "ng-annotate-loader": "^0.2.0",
+    "node-sass": "~3.3.3",
+    "raw-loader": "~0.5.1",
+    "rimraf": "~2.5.2",
+    "sass-loader": "~3.0.0",
+    "script-loader": "~0.6.1",
+    "style-loader": "~0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "~1.12.14",
+    "webpack-md5-hash": "0.0.5",
+    "webpack-merge": "~0.14.0"
   }
 }
