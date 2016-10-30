@@ -35,9 +35,29 @@
         request.done(handleDoodles);
         request.fail(handleFailedRequest);
 
+    });
+
+    function handleDoodles(data) {
+
+        var serverResponse = data;
+
+        $.each(serverResponse, function (i, theBug) {
+            var b = new doodleBug.Bug({name: theBug.name, team: theBug.team, attributes: theBug.attributes});
+            bugArr.push(b);
+        });
+
+        renderBugs(bugArr);
         bindEvents();
 
-    });
+    }
+
+    function renderBugs(bugList) {
+        $('#doodle-list tbody').empty();
+
+        $.each(bugList, function (i, bug) {
+            $('#doodle-list tbody').append('<tr><td class="icon-' + bug.doodleName + '-bug">' + bug.formatName() + '</td><td>' + bug.teamName + '</td><td>' + bug.getHighestRating() + '</td><td><input name="compare[]" type="checkbox" value="' + bug.doodleName + '"/></td></tr>')
+        });
+    }
 
     function bindEvents() {
 
@@ -63,29 +83,6 @@
             var compareLimit = $('input:checkbox:checked').length >= 2;
             $('input:checkbox').not(':checked').attr('disabled', compareLimit);
         });
-    }
-
-    function handleDoodles(data) {
-
-        var serverResponse = data;
-
-        $.each(serverResponse, function (i, theBug) {
-            var b = new doodleBug.Bug({name: theBug.name, team: theBug.team, attributes: theBug.attributes});
-            bugArr.push(b);
-        });
-
-        renderBugs(bugArr);
-
-    }
-
-    function renderBugs(bugList) {
-        $('#doodle-list tbody').empty();
-
-        $.each(bugList, function (i, bug) {
-            $('#doodle-list tbody').append('<tr><td class="icon-' + bug.doodleName + '-bug">' + bug.formatName() + '</td><td>' + bug.teamName + '</td><td>' + bug.getHighestRating() + '</td><td><input name="compare[]" type="checkbox" value="' + bug.doodleName + '"/></td></tr>')
-        });
-
-
     }
 
     function sortBugsByName(direction, type) {
