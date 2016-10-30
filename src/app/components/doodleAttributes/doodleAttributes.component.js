@@ -8,11 +8,7 @@ let doodleAttributesComponent = {
         doodle: '<',
         attribute: '<',
         opponent: '<'
-    },
-    require: {
-        compareDoodles: '^^'
-    },
-    controller
+    }
 };
 
 export default doodleAttributesComponent;

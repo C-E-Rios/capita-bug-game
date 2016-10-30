@@ -13,13 +13,34 @@ class CompareDoodlesController {
 
     compareSelectedDoodles (newDoodle) {
 
-        if (!this.doodleA || (this.doodleB && this.doodleB.selected)) {
+        // Assign first selection to doodleA
+        if (!this.doodleA) {
             return this.doodleA = newDoodle;
         }
 
-        if (!this.doodleB || (this.doodleA && this.doodleA.selected)) {
+        // Assign second selection to doodleA
+        if (!this.doodleB) {
             return this.doodleB = newDoodle;
         }
+
+        // Correct pointer for doodleA already set, no need to do anything
+        if (this.doodleA.selected && this.doodleA.name === newDoodle.name) {
+            return newDoodle;
+        }
+
+        // Correct pointer for doodleB already set, no need to do anything
+        if (this.doodleB.selected && this.doodleB.name === newDoodle.name) {
+            return newDoodle;
+        }
+
+        if (!this.doodleA.selected) {
+            return this.doodleA = newDoodle;
+        }
+
+        if (!this.doodleB.selected) {
+            return this.doodleB = newDoodle;
+        }
+
     }
 
 }
