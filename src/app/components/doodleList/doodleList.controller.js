@@ -14,7 +14,9 @@ class DoodleListContoller {
         prop === 'name' ? this.sortteam = null : this.sortname = null;
     }
 
-    newDoodle (selectedDoodle) {
+    manageDoodles (selectedDoodle) {
+        // newDoodle event 
+        this.newDoodle({$event: {newDoodle: selectedDoodle}})
         selectedDoodle.selected ? this.doodlesSelected++ : this.doodlesSelected--;
     }
 

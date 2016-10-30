@@ -20,7 +20,7 @@
             <td class="icon-{{doodle.name}}-bug">{{doodle.name}}:bug</td>
             <td>{{doodle.team}}</td>
             <td>{{doodle.highestRating}}</td>
-            <td><input name="compare-{{doodle.name}}" type="checkbox" ng-model="doodle.selected" ng-change="$ctrl.newDoodle(doodle)" ng-disabled="!doodle.selected && $ctrl.doodlesSelected === $ctrl.limit"></td>
+            <td><input name="compare-{{doodle.name}}" type="checkbox" ng-model="doodle.selected" ng-change="$ctrl.manageDoodles(doodle)" ng-disabled="!doodle.selected && $ctrl.doodlesSelected === $ctrl.limit"></td>
         </tr>
     </tbody>
 </table>

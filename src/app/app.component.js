@@ -4,8 +4,7 @@ import './app.scss';
 
 let appComponent = {
     controller,
-    template,
-    restrict: 'E'
+    template
 };
 
 export default appComponent;

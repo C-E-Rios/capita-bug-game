@@ -1,0 +1,21 @@
+<style media="screen">
+    .green {
+        color: green;
+    }
+    .red {
+        color: red;
+    }
+</style>
+<div ng-if="$ctrl.doodleA.selected" style="text-align: center;">
+    <span class="icon-{{$ctrl.doodleA.name}}-bug"></span>
+    <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'speed'"></doodle-attributes>
+    <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'strength'"></doodle-attributes>
+    <doodle-attributes doodle="$ctrl.doodleA" opponent="$ctrl.doodleB" attribute="'intelligence'"></doodle-attributes>
+</div>
+
+<div ng-if="$ctrl.doodleB.selected" style="text-align: center;">
+    <span class="icon-{{$ctrl.doodleB.name}}-bug"></span>
+    <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'speed'"></doodle-attributes>
+    <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'strength'"></doodle-attributes>
+    <doodle-attributes doodle="$ctrl.doodleB" opponent="$ctrl.doodleA" attribute="'intelligence'"></doodle-attributes>
+</div>

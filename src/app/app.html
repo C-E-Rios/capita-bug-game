@@ -4,11 +4,12 @@
 </header>
 <section id="bug-list" class="core-section">
     <h2>the doodles</h2>
-    <doodle-list doodles="$ctrl.doodles"></doodle-list>
+    <doodle-list doodles="$ctrl.doodles" new-doodle="$ctrl.newDoodle = $event.newDoodle"></doodle-list>
 </section>
 <section id="compare-bugs" class="core-section">
     <h2>comparison</h2>
     <div id="comparison-area">
+        <compare-doodles new-doodle="$ctrl.newDoodle"></compare-doodles>
         <div id="comparisonBase"></div>
     </div>
 </section>
