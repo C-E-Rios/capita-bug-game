@@ -7,7 +7,6 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
-
 module.exports = webpackMerge(commonConfig, {
 
   /**
