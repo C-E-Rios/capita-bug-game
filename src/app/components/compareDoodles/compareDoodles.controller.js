@@ -6,12 +6,12 @@ class CompareDoodlesController {
     $onChanges () {
 
         if (this.newDoodle && this.newDoodle.selected) {
-            this.compareSelectedDoodles(this.newDoodle);
+            this.updateDoodles(this.newDoodle);
         }
 
     }
 
-    compareSelectedDoodles (newDoodle) {
+    updateDoodles (newDoodle) {
 
         // Assign first selection to doodleA
         if (!this.doodleA) {
@@ -23,23 +23,13 @@ class CompareDoodlesController {
             return this.doodleB = newDoodle;
         }
 
-        // Correct pointer for doodleA already set, no need to do anything
-        if (this.doodleA.selected && this.doodleA.name === newDoodle.name) {
-            return newDoodle;
-        }
+        let container = [];
+        container.push(this.doodleA, this.doodleB, newDoodle);
+        container =  _.uniq(container);
+        container = _.filter(container, (item) => item.selected);
 
-        // Correct pointer for doodleB already set, no need to do anything
-        if (this.doodleB.selected && this.doodleB.name === newDoodle.name) {
-            return newDoodle;
-        }
-
-        if (!this.doodleA.selected) {
-            return this.doodleA = newDoodle;
-        }
-
-        if (!this.doodleB.selected) {
-            return this.doodleB = newDoodle;
-        }
+        this.doodleA = container[0];
+        this.doodleB = container[1];
 
     }
 
